@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <vue-bpmn style="height: 100vh;"
+              :options="options"
+              storage
+              @get="handleGetXml"></vue-bpmn>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      options: {
+        mode: 'edit',
+        xml: '',
+        flows: [],
+      },
+      drawerVisible: false
+    }
+  },
+  methods: {
+    handleGetXml(xml) {
+      console.log(xml)
+      this.$message.success('查看控制台')
+    }
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

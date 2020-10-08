@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/cdn/element-ui/theme-chalk/index.css">
+  <title>vue-bpmn</title>
+</head>
+
+<body>
+  <div id="app">
+    <vue-bpmn style="height: 100vh;"></vue-bpmn>
+  </div>
+
+  <script src="../public/cdn/vue/vue.min.js" charset="utf-8"></script>
+  <script src="../public/cdn/element-ui/index.js" charset="utf-8"></script>
+  <script src="../lib/index.umd.min.js" charset="utf-8"></script>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      components: {
+        'vue-bpmn': window.VueBpmn
+      }
+    })
+  </script>
+</body>
+
+</html>
